@@ -3,18 +3,18 @@ var cuenta = {
   titular: "Alex",
   saldoinicial: 0,
 
-  depositado: function(valor) {
-    console.log("se a ingresado " + valor + " pesos");
-    return this.saldoinicial += valor;
+  depositado: function(valor1) {
+    console.log("se a ingresado " + valor1 + " pesos");
+    return this.saldoinicial + valor1;
   },
 
-  extraido: function(valor) {
-    console.log("Has extraido " + valor + " pesos");
-    return this.saldoinicial -= valor;
+  extraido: function(valor2) {
+    console.log("se a extraido " + valor2 + " pesos");
+    return this.saldoinicial - valor2;
   },
 
-  informacion: function() {
-    return "El nombre del titular es: " + this.titular + " El saldo actual de la cuenta es de " + this.saldoinicial + " pesos";
+  informacion: function(info) {
+    console.log("El nombre del titular es: " + this.titular + " El saldo actual de la cuenta es de " + this.saldoinicial + " pesos");
   }
 
 }
@@ -22,9 +22,14 @@ var cuenta = {
 console.log(cuenta.titular);
 console.log(cuenta.saldoinicial);
 console.log('-------------')
-console.log(cuenta.depositado(80));
-console.log(cuenta.extraido(20));
-console.log(cuenta.informacion());
+let valor1=prompt("valor a depositar");
+cuenta.depositado(valor1);
+let valor2=prompt("valor extraido");
+cuenta.extraido(valor2)
+cuenta.informacion();
+
+
+
 
 
 
@@ -70,7 +75,6 @@ else {
 return "impar";
 }
 }
-
 
 
 
